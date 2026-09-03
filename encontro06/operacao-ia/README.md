@@ -1,4 +1,4 @@
-<strong align="center">Resposta da atividade</strong>
+<p align="center"><strong>Resposta da atividade</strong></p>
 <p align="center">
   <strong>DTO</strong> é uma forma de lidar com a entrada e saída que trafegam nas requisições. É uma forma de encapsular ainda mais os dados, e de validação.
 </p>
