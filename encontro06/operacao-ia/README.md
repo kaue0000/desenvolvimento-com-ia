@@ -1,3 +1,18 @@
+<strong align="center">Resposta da atividade</strong>
+<p align="center">
+  <strong>DTO</strong> é uma forma de lidar com a entrada e saída que trafegam nas requisições. É uma forma de encapsular ainda mais os dados, e de validação.
+</p>
+<p align="center">
+  <strong>Controller</strong> lida com as requisições HTTP. Recebem DTO como requisição, chamam DTO para validação. Após isso, manda a responsabilidade de lidar com as regras de negócio para o service.
+</p>
+<p align="center">
+  <strong>Service</strong> é a parte responsável pelas regras de negócio, e orquestra o processamento dos dados.
+</p>
+<p align="center">
+  <strong>Provider</strong> isola a integração com serviços externos para que seja possível mudar as dependências sem modificar as regras de negócio.
+</p>
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
