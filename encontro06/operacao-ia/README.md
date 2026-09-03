@@ -11,8 +11,9 @@
 <p align="center">
   <strong>Provider</strong> isola a integração com serviços externos para que seja possível mudar as dependências sem modificar as regras de negócio.
 </p>
-
-<p color="red"><strong>Importante: registros dos testes realizados durante a atividade se encontram na caminho '/capturas-execucao/</strong></p>
+<p style="color: red;">
+  <strong>Importante: os registros dos testes realizados durante a atividade encontram-se no caminho '/capturas-execucao/'.</strong>
+</p>
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
