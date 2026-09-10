@@ -8,11 +8,8 @@ import {
 import { ConfigService } from '@nestjs/config';
 import axios from 'axios';
 import {
-  GerarRespostaInput,
-  GerarRespostaOutput,
   GerarRespostaChamadoInput,
   GerarRespostaChamadoOutput,
-  ModeloProvider,
   ModeloChamadoProvider,
 } from './modelo.provider.js';
 import { ChamadoCategoria } from '../../chamados/chamado-categoria.js';
