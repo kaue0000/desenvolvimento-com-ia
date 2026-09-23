@@ -1,0 +1,20 @@
+Acurácia (Atribuição de Categoria)	
+Antes: 50% (Falhou no texto vago e no prompt injection)	Depois: 100% (Classificou corretamente todos os 4 casos)
+Antes: Conformidade (Aderência de Formato)	Depois: 75% (Retornou texto extra em injeções de prompt)	100% (Respostas estritamente limitadas a 1 palavra em caixa alta)
+
+Centralizei o prompt e coloquei regras de isolamento usando a tag <chamado>, 
+além de validar a resposta em tempo de execução com um enum bem restrito. 
+Isso reduziu os erros de formatação e alucinação do modelo. 
+Basicamente, o backend parou de confiar cegamente na resposta do LLM. 
+Agora trata ela como dado não confiável mesmo. Se a saída não bate com o contrato esperado, 
+lança um BadGatewayException, em vez de aceitar de qualquer jeito ou forçar para outros.
+
+Nos primeiros 12 testes feitos, a conformidade de formato deu 100%. 
+Ou seja, o prompt tava conseguindo fazer o modelo responder só com a string da categoria. 
+Só que apareceu um bug de classificação no caso negacao-02: o fato de aparecer a palavra "senha" 
+no texto já fazia o modelo chutar ACESSO, mesmo quando o contexto era claramente outro.
+
+Pra resolver, ajustei o prompt adicionando uma regra em que os termos que aparecem em contexto de negação 
+ou descarte não devem contar pra definir a categoria. Rodei novamente depois disso, 
+e a conformidade continuou 100%, mas a acurácia subiu de 83,3% pra 91,6%. Sendo assim, corrigiu o erro de negação 
+sem estragar os casos normais nem os adversariais, o que é ótimo.
